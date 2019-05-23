@@ -17,7 +17,7 @@ kritisch = input("Wie hoch ist der Wert in Kritisch? ")
 
 WGS = input("Wie hoch ist die WGS ? ")
 print
-graphics = input("Ergebnis mit Matplotlib graphisch darstellen? \"1\" = grafische Ausgabe ")
+graphics = input("Ergebnis mit Matplotlib graphisch darstellen und speichern? \"1\" = grafische Ausgabe ")
 print
 throws=np.zeros((dice**ndices,ndices))
 results=np.zeros(dice**ndices)
@@ -27,7 +27,6 @@ for i in range(dice**ndices):
 	# DMG = wurfergebnis+evtl kritisch+dmgbonus
 	throwresult=max(max(throws[i][:]),minwurf)
 	results[i]=throwresult+int(throwresult/dice)*kritisch+dmgbonus
-
 
 erwartungswert=(np.sum(results)/(dice**ndices))*ndmgdice
 plt.hist(results,bins=np.arange(0.5,dice+kritisch+dmgbonus+1,1),density=True)
@@ -39,7 +38,9 @@ if graphics==1:
 	plt.suptitle("Schaden f. " + str(ndmgdice)+"W"+str(dice)+" + "+str(dmgbonus)+" mit: exakt " + str(exakt) + ", scharf "+ str(scharf) + ", kritisch " + str(kritisch) + " und WGS " + str(WGS) )
 	plt.xlabel("Schaden f. Einzelwurf")
 	plt.ylabel("Wahrscheinlichkeit")
+	plt.savefig(str(ndmgdice)+"W"+str(dice)+"+"+str(dmgbonus)+",exakt" + str(exakt) + ",scharf"+str(scharf)+",krit"+str(kritisch)+",WGS"+str(WGS) )
 	plt.show()
+	
 else:
 	print("Gewählt: "+str(ndmgdice)+"W"+str(dice)+" + "+str(dmgbonus)+" mit: exakt " + str(exakt) + ", scharf "+str(scharf)+", kritisch "+str(kritisch)+" und WGS "+str(WGS) )
 	print
@@ -53,7 +54,7 @@ else:
 	print histogram*100
 	
 print
-debug = input("Debugging-Ergebnisse anzeigen? \"1\" zeigt an, ansonsten verborgen ")print
+debug = input("Debugging-Ergebnisse anzeigen? \"1\" zeigt an, ansonsten verborgen ");print
 	
 
 if debug == 1:

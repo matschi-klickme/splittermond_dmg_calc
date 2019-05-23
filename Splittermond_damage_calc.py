@@ -58,10 +58,9 @@ debug = input("Debugging-Ergebnisse anzeigen? \"1\" zeigt an, ansonsten verborge
 	
 
 if debug == 1:
-	print("--> Das bedeutet "+str(dice**ndices)+" Mögliche Wurfergebnisse")
+	print("--> Das bedeutet "+str(dice**ndices)+" Mögliche Wurfergebnisse die wir uns ansehen können")
 	print("Debug output: Einzelne Würfe und Ergebnis incl exakt, scharf und kritisch")
 	print
 	for i in range(dice**ndices):
-		print throws[i][:]
-		print("Ergebnis: "+str(results[i]))
+		print ( str(throws[i][:]) + "  Ergebnis: "+str(results[i]) )
 

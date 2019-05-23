@@ -7,7 +7,19 @@ Benötigte Python-Module:
  * math
  
  Handhabe: 
-- Einfach ausführen und eintippen. 
+- Einfach ausführen und eintippen oder per here-doc oder pipe durchreichen 
+- Unterstütze Merkmale: 
+     - Schadenswürfel: Typ und Anzahl
+     - Schadensbonus
+     - Merkmal "Exakt"
+     - Merkmal "Scharf"
+     - Merkaml "Kritisch"
+     - Waffengeschwindigkeit 
+
+Ausgabewerte: 
+     - Schaden-Erwartungswert
+     - Schaden-Pro-Tick Erwartungswert
+     - mögliche Schadenswerte mit jeweiliger Wahrscheinlichkeit
 
 Cli: 
 

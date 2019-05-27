@@ -63,4 +63,6 @@ if debug == 1:
 	print
 	for i in range(dice**ndices):
 		print ( str(throws[i][:]) + "  Ergebnis: "+str(results[i]) )
-
+	histogram,bins=np.histogram(results,bins=uniquebins)
+	print bins
+	print histogram

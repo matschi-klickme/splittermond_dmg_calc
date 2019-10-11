@@ -28,7 +28,7 @@ for i in range(dice**ndices):
 	throwresult=max(max(throws[i][:]),minwurf)
 	results[i]=throwresult+int(throwresult/dice)*kritisch+dmgbonus
 
-erwartungswert=(np.sum(results)/(dice**ndices))*ndmgdice
+erwartungswert=(np.sum(results)/(dice**ndices))*ndmgdice-(ndmgdice-1)*dmgbonus
 plt.hist(results,bins=np.arange(0.5,dice+kritisch+dmgbonus+1,1),density=True)
 
 if graphics==1:
